@@ -40,12 +40,13 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':AndroidBasePrime')
+    //implementation project(':AndroidBasePrime')
 
     implementation "androidx.appcompat:appcompat:$appCompat_version"
     implementation 'com.google.android.gms:play-services-ads:20.1.0'
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayout_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.github.ufebri:Android-Base-Prime:0.0.1'
 
 }
 
