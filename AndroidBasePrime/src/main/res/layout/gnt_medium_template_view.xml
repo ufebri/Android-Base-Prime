@@ -5,7 +5,7 @@
     <com.google.android.gms.ads.nativead.NativeAdView
         android:id="@+id/native_ad_view"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="250dp"
         android:background="@drawable/gnt_outline_shape">
 
         <androidx.constraintlayout.widget.ConstraintLayout

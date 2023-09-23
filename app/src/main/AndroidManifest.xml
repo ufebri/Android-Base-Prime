@@ -3,7 +3,7 @@
     package="bedboy.utilitybuddy">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="bedboy.utilitybuddy.MainActivity"
+            android:name=".GalleryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

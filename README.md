@@ -1,7 +1,7 @@
 [![](https://jitpack.io/v/ufebri/Android-Base-Prime.svg)](https://jitpack.io/#ufebri/Android-Base-Prime)
 
 # Android Base Prime
-The library for all you need for Helper, Extension and CustomView for your next Android Project.
+The library for all you need for Helper, Extension and CustomView to your next Android Project.
 
 ## How to Install
 
@@ -10,8 +10,22 @@ The library for all you need for Helper, Extension and CustomView for your next 
 ## How to use
 Theres many function you can try, lets choose one.
 
+### Required Config
+Put this code on your AndroidManifest.xml
+
+    // Is required flag for andrroid target sdk 33
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+
+    <application ...>
+        .........
+        <meta-data
+                android:name="com.google.android.gms.ads.APPLICATION_ID"
+                android:value="@string/ads_application_id" /> //Just set your ads application ID
+    </application>
+
+
 ### ColorfulListMenuRecyclerView
-<img src="asset/ColorfulListMenuRecyclerView.gif" height="400" alt="ColorfulListMenuRecyclerView v1.0"/>
+<img src="./asset/ColorfulListMenuRecyclerView.gif" height="400" alt="ColorfulListMenuRecyclerView v1.0"/>
 
 Put this code on your Activity/Fragment.
 
@@ -25,7 +39,8 @@ Put this code on your Activity/Fragment.
       
     //Show the list Menu  
     binding.rvMain.apply {  
-      adapter = mAdapter  
+      adapter = mAdapter
+      //You can Linear, Grid or Staggered
       layoutManager = LinearLayoutManager(this@MainActivity)  
     }  
       
@@ -43,3 +58,25 @@ Lets say your list menu is like this
             ColorFullListMenu("2","Email",emailIntIcon, ContextCompat.getColor(this, R.color.colorPrimaryDark)),
             ColorFullListMenu("3","Location",locationIntIcon,ContextCompat.getColor(this, R.color.colorPrimary))
             }
+
+
+### Gallery Grid With Ads
+<img src="./asset/PhotoGridRecyclerView.gif" height="400" alt="PhotoGridRecyclerView v1.0"/>
+
+
+Put this code on your Activity/Fragment.
+
+    //init adapter
+        val mAdapter = PhotoGridAdapter(object : OnClickListener {
+            override fun onClickItem(item: ItemData) {
+                Toast.makeText(this@GalleryActivity, "Clicked ${item.field1s}", Toast.LENGTH_LONG).show() }
+            }, getString(R.string.admob_native_id))
+
+    //show the images
+        binding.apply {
+            photosGrid.adapter = mAdapter
+            photosGrid.layoutManager =
+                GridLayoutManager(this@GalleryActivity, 2, GridLayoutManager.VERTICAL, false)
+        }
+
+        mAdapter.submitList(remappingGalleryList(getListImage()))

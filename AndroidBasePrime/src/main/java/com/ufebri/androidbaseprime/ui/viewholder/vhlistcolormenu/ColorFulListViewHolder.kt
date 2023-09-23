@@ -23,6 +23,6 @@ class ColorFulListViewHolder(private val binding: ItemMenuIconBinding) :
         }
 
         //Handle OnClick
-        binding.root.setOnClickListener { onClickListener.onClickItem(ItemData(item.titleMenuList)) }
+        binding.root.setOnClickListener { onClickListener.onClickItem(ItemData(item.idMenuList)) }
     }
 }
