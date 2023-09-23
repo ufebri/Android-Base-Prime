@@ -24,7 +24,7 @@ class GridImagesViewHolder(private var binding: GridViewItemBinding) :
             )
             .into(binding.marsImage)
 
-        val mData = ItemData(data.imgSrc)
+        val mData = ItemData(data.id)
 
         binding.root.setOnClickListener { onClick.onClickItem(mData) }
     }
