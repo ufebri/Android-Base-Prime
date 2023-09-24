@@ -1,5 +1,7 @@
 package com.ufebri.androidbaseprime.util
 
+import android.content.Context
+import android.widget.Toast
 import androidx.core.text.HtmlCompat
 
 /**
@@ -29,5 +31,8 @@ object GeneralHelper {
         }
         return listBuilder.toString()
     }
+
+    fun showToastMessage(mContext: Context, message: String) =
+        Toast.makeText(mContext, message, Toast.LENGTH_LONG).show()
 
 }

@@ -2,7 +2,6 @@ package bedboy.utilitybuddy
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import bedboy.utilitybuddy.DummyDataHelper.GALLERY_MENU
@@ -10,6 +9,7 @@ import bedboy.utilitybuddy.DummyDataHelper.getListMenu
 import bedboy.utilitybuddy.databinding.ActivityMainBinding
 import com.ufebri.androidbaseprime.domain.model.ItemData
 import com.ufebri.androidbaseprime.ui.adapter.ColorfulListMenuAdapter
+import com.ufebri.androidbaseprime.util.GeneralHelper
 import com.ufebri.androidbaseprime.util.OnClickListener
 
 class MainActivity : AppCompatActivity() {
@@ -32,8 +32,7 @@ class MainActivity : AppCompatActivity() {
                         )
                     )
 
-                    else -> Toast.makeText(this@MainActivity, item.field1s, Toast.LENGTH_LONG)
-                        .show()
+                    else -> GeneralHelper.showToastMessage(this@MainActivity, item.field1s ?: "")
                 }
             }
         })

@@ -8,6 +8,7 @@ import bedboy.utilitybuddy.DummyDataHelper.getListImage
 import bedboy.utilitybuddy.databinding.ActivityGalleryBinding
 import com.ufebri.androidbaseprime.domain.model.ItemData
 import com.ufebri.androidbaseprime.ui.adapter.PhotoGridAdapter
+import com.ufebri.androidbaseprime.util.GeneralHelper
 import com.ufebri.androidbaseprime.util.OnClickListener
 import com.ufebri.androidbaseprime.util.RemappingDataWithAds.remappingGalleryList
 
@@ -23,8 +24,7 @@ class GalleryActivity : AppCompatActivity() {
         //init adapter
         val mAdapter = PhotoGridAdapter(object : OnClickListener {
             override fun onClickItem(item: ItemData) {
-                Toast.makeText(this@GalleryActivity, "Clicked ${item.field1s}", Toast.LENGTH_LONG)
-                    .show()
+                GeneralHelper.showToastMessage(this@GalleryActivity, "Clicked ${item.field1s}")
             }
         }, getString(R.string.admob_native_id))
 

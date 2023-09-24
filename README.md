@@ -80,3 +80,15 @@ Put this code on your Activity/Fragment.
         }
 
         mAdapter.submitList(remappingGalleryList(getListImage()))
+
+
+### General Helper
+Lets short some function
+
+1. Showing Toast
+
+        GeneralHelper.showToastMessage(YOUR_CONTEXT, "YOUR MESSAGE")
+
+2. Make bullet list order
+
+        GeneralHelper.getBulletList(YOUR_LIST<STRING>)
